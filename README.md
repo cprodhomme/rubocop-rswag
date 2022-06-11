@@ -1,9 +1,5 @@
 # Rubocop::Rswag
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rubocop/rswag`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,7 +18,42 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
+You need to tell RuboCop to load the RSpec extension. There are three
+ways to do this:
+
+### RuboCop configuration file
+
+Put this into your `.rubocop.yml`.
+
+```yaml
+require: rubocop-rswag
+```
+
+Alternatively, use the following array notation when specifying multiple extensions.
+
+```yaml
+require:
+  - rubocop-other-extension
+  - rubocop-rswag
+```
+
+Now you can run `rubocop` and it will automatically load the RuboCop RSpec
+cops together with the standard cops.
+
+### Command line
+
+```bash
+rubocop --require rubocop-rswag
+```
+
+### Rake task
+
+```ruby
+RuboCop::RakeTask.new do |task|
+  task.requires << 'rubocop-rswag'
+end
+```
 
 ## Development
 
