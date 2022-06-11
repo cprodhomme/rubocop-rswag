@@ -1,0 +1,8 @@
+# Write it!
+
+Rswag/ResponseArgumentsMustBeAString:
+  Description: '`response` arguments must be a String'
+  Enabled: true
+  VersionAdded: '0.1.0'
+  Include:
+    - spec/requests/**/*_spec.rb
