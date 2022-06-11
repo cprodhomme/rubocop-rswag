@@ -5,7 +5,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rubocop-rswag', require: false
+gem 'rubocop-rswag', require: false, github: 'cprodhomme/rubocop-rswag'
 ```
 
 And then execute:
